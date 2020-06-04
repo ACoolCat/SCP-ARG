@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Alter Data</h1>
+    <form action="/scp/<%=scp.id%>?_method=PUT" method="POST">
+      First_Sighting: <input type="text" name="found" value="<%=scp.found%>"/><br/>
+      Capture_Details: <input type="text" name="detained" value="<%=scp.detained%>"/><br/>
+      Supernatural_Phenomena: <input type="text" name="capabilities" value="<%=scp.capabilities%>"/><br/>
+      Level_Of_Threat: <input type="text" name="threat" value="<%=scp.threat%>"/><br/>
+      Expierments: <input type="text" name="experiment" value="<%=scp.experiment%>"/><br/>
+      CAUTION: <input type="text" name="warning" value="<%=scp.warning%>"/><br/>
+
+      <input type="submit" value="Submit Changes">
+    </form>
+  </body>
+</html>

@@ -6,7 +6,8 @@ const methodOverride  = require('method-override');
 const mongoose = require ('mongoose');
 const app = express ();
 const db = mongoose.connection;
-require('dotenv').config()
+require('dotenv').config();
+const Scp = require('./models/scp.js');
 //___________________
 //Port
 //___________________
@@ -53,8 +54,55 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
 //localhost:3000
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.render('intro.ejs');
 });
+
+app.get('/scp/new', (req, res) => {
+  res.render('new.ejs');
+});
+
+app.get('/scp', (req, res) => {
+  Scp.find({}, (error, allScp) => {
+    res.render('index.ejs', {
+      scp: allScp
+    });
+  })
+})
+
+app.get('/scp/:id/edit', (req, res) => {
+  Scp.findById(req.params.id, (error, foundScp) => {
+    res.render('edit.ejs', {
+      scp: foundScp
+    })
+  })
+})
+
+app.put('/scp/:id', (req, res) => {
+  Scp.findByIdAndUpdate(req.params.id, req.body, (err, updatedModel) => {
+    res.redirect('/scp')
+  })
+})
+
+app.get('/scp/:id', (req, res) => {
+  Scp.findById(req.params.id, (error, foundScp) => {
+    res.render('show.ejs', {
+      scp:foundScp
+    })
+    console.log(req.params.id);
+  })
+})
+
+app.delete('/:id', (req, res) => {
+  Scp.findByIdAndRemove(req.params.id, (error, deletedScp) => {
+    res.redirect('/scp');
+  })
+})
+
+app.post('/scp', (req, res) => {
+  Scp.create(req.body, (error, createdScp) => {
+    res.redirect('/scp')
+  })
+})
 
 //___________________
 //Listener

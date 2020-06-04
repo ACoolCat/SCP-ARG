@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1><%=scp.name%></h1>
+    <table>
+      <div class="data">
+        <img src="<%=scp.img%>" alt="scp">
+      </div> </br>
+      <div class="data">
+        First_Sighting: <%=scp.found%>
+      </div> </br>
+      <div class="data">
+        Capture_Details: <%=scp.detained%>
+      </div> </br>
+      <div class="data">
+        Supernatural_Phenomena: <%=scp.capabilities%>
+      </div> </br>
+      <div class="data">
+        Level_Of_Threat: <%=scp.threat%>
+      </div> </br>
+      <div class="data">
+        Experiments: <%=scp.experiment%>
+      </div> </br>
+      <div class="data">
+        CAUTION: <%=scp.warning%>
+      </div> </br>
+    </table>
+    <a href="/scp/<%=scp.id%>/edit">CORRECT DATA</a>
+    
+  </body>
+</html>
