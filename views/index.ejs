@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
@@ -9,9 +11,9 @@
     <div class="add">
       <a href="/scp/new"> ＋ </a>
     </div>
-    <table>
+
     <%for(var i = 0; i < scp.length; i++) {%>
-    <div class="contianer">
+    <table>
       <div class="view">
         <img src="<%=scp[i].img%>" alt="scp">
 
@@ -25,7 +27,7 @@
         <input type="submit" value="DELETE">
       </form>
 
-    </div>
+
 
     </table>
     <%}%>

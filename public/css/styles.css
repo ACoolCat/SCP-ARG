@@ -1,0 +1,30 @@
+*{
+  border: 1px solid gold;
+  background-color: black;
+  color: green;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+table {
+  flex-wrap: wrap;
+}
+
+.view{
+  height: 25%;
+  width: 25%;
+  margin-right: 0px;
+}
+
+.logo{
+  height: 60vh;
+  width: 60vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
