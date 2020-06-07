@@ -57,7 +57,3 @@ input:hover{
   cursor: pointer;
   text-decoration: underline;
 }
-
-input{
-  border: none;
-}
