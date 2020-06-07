@@ -2,6 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <body>
@@ -9,27 +11,28 @@
     <table>
       <div class="data">
         <img src="<%=scp.img%>" alt="scp">
-      </div> </br>
+      </div> </br></br>
       <div class="data">
-        First_Sighting: <%=scp.found%>
-      </div> </br>
+        First_Sighting:</br> <%=scp.found%>
+      </div> </br></br>
       <div class="data">
-        Capture_Details: <%=scp.detained%>
-      </div> </br>
+        Capture_Details:</br> <%=scp.detained%>
+      </div> </br></br>
       <div class="data">
-        Supernatural_Phenomena: <%=scp.capabilities%>
-      </div> </br>
+        Supernatural_Phenomena:</br> <%=scp.capabilities%>
+      </div> </br></br>
       <div class="data">
-        Level_Of_Threat: <%=scp.threat%>
-      </div> </br>
+        Level_Of_Threat:</br> <%=scp.threat%>
+      </div> </br></br>
       <div class="data">
-        Experiments: <%=scp.experiment%>
-      </div> </br>
+        Experiments:</br> <%=scp.experiment%>
+      </div> </br></br>
       <div class="data">
-        CAUTION: <%=scp.warning%>
-      </div> </br>
+        CAUTION:</br> <%=scp.warning%>
+      </div> </br></br>
     </table>
-    <a href="/scp/<%=scp.id%>/edit">CORRECT DATA</a>
-    
+    <a href="/scp/<%=scp.id%>/edit">CORRECT DATA</a><br></br>
+    <a href="/scp/">Return To SCP Index</a>
+
   </body>
 </html>
