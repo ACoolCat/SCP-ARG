@@ -8,6 +8,15 @@ const app = express ();
 const db = mongoose.connection;
 require('dotenv').config();
 const Scp = require('./models/scp.js');
+const users = require('./controllers/users_constroller.js')
+const sessions = require('./controllers/sessions_controllers.js')
+require('express-session')
+const session = require('express-session')
+app.use(session({
+      secret: "feedmeseymour", //a random string do not copy this value or your stuff will get hacked
+      resave: false,
+      saveUninitialized: false
+}));
 //___________________
 //Port
 //___________________
@@ -48,6 +57,8 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
+app.use('/users', users);
+app.use('/sessions', sessions)
 
 //___________________
 // Routes
